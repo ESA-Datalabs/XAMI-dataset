@@ -1,6 +1,8 @@
 # XAMI-dataset
 
-*The HuggingFace repository for this dataset can be found [here](https://huggingface.co/datasets/iulia-elisa/XAMI-dataset)*. 
+
+The **HuggingFace** repository for this dataset can be found **[here](https://huggingface.co/datasets/iulia-elisa/XAMI-dataset)**. 
+
 
 The XAMI dataset contains 1000 annotated images of observations from diverse sky regions of the XMM-Newton Optical Monitor (XMM-OM) image catalog. An additional 50 images with no annotations are included to help decrease the amount of False Positives or Negatives that may be caused by complex objects (e.g., large galaxies, clusters, nebulae).
 
@@ -9,58 +11,59 @@ The XAMI dataset contains 1000 annotated images of observations from diverse sky
 A particularity of our XAMI dataset compared to every-day images datasets are the locations where artefacts usually appear. 
 <img src="https://huggingface.co/datasets/iulia-elisa/XAMI-dataset/resolve/main/plots/artefact_distributions.png" alt="Examples of an image with multiple artefacts." />
 
-Here are some examples of common artefacts:
+Here are some examples of common artefacts in the dataset:
 
 <img src="https://huggingface.co/datasets/iulia-elisa/XAMI-dataset/resolve/main/plots/artefacts_examples.png" alt="Examples of common artefacts in the OM observations." width="400"/>
 
 # Annotation platforms
 
-The dataset images have been annotated using the following project:
+The images have been annotated using the following projects:
 
 - [Zooniverse project](https://www.zooniverse.org/projects/ori-j/ai-for-artefacts-in-sky-images), where the resulted annotations are not externally visible. 
 - [Roboflow project](https://universe.roboflow.com/iuliaelisa/xmm_om_artefacts_512/), which allows for more interactive and visual annotation projects. 
 
 # The dataset format
-The XAMI dataset is splited into train and validation categories and contains annotated artefacts in COCO format for Instance Segmentation. We use multilabel Stratified K-fold technique (**k=4**) to balance class distributions across training and validation splits. We choose to work with a single dataset splits version (out of 4), but also provide means to train all 4 versions. 
+The dataset is splited into train and validation categories and contains annotated artefacts in COCO format for Instance Segmentation. We use multilabel Stratified K-fold technique (**k=4**) to balance class distributions across splits. We choose to work with a single dataset splits version (out of 4), but also provide means to work with all 4 versions. 
 
-A more detailed structure of our dataset in COCO and YOLOformat can be found in [Dataset Structure](Datasets-Structure.md).
+Please check [Dataset Structure](Datasets-Structure.md) for a more detailed structure of our dataset in COCO and YOLOv8-Seg format.
 
 # Downloading the dataset
 
-The dataset repository on can be found on [HuggingFace](https://huggingface.co/datasets/iulia-elisa/XAMI-dataset) and [Github](https://github.com/IuliaElisa/XAMI-dataset).
+The dataset repository can be found on [HuggingFace](https://huggingface.co/datasets/iulia-elisa/XAMI-dataset) and [Github](https://github.com/IuliaElisa/XAMI-dataset).
 
 ### Downloading the dataset archive from HuggingFace:
 
 ```python
-from huggingface_hub import hf_hub_download
+import os
 import pandas as pd
+from huggingface_hub import hf_hub_download
 
 dataset_name = 'dataset_archive' # the dataset name of Huggingface
 images_dir = '.' # the output directory of the dataset images
-annotations_path = os.path.join(images_dir, dataset_name, '_annotations.coco.json')
 
-for filename in [dataset_name, utils_filename]:
-  hf_hub_download(
+hf_hub_download(
     repo_id="iulia-elisa/XAMI-dataset", # the Huggingface repo ID
     repo_type='dataset', 
-    filename=filename, 
+    filename=dataset_name+'.zip', 
     local_dir=images_dir
-  );
+);
 
 # Unzip file
-!unzip "dataset_archive.zip"
+!unzip "dataset_archive.zip" 
 
-# Read the json annotations file
+# Read the train json annotations file
+annotations_path = os.path.join(images_dir, dataset_name, 'train/', '_annotations.coco.json')
+
 with open(annotations_path) as f:
     data_in = json.load(f)
 ```
 or
-
+<!-- 
 ```
 - using a CLI command:
 ```bash
 huggingface-cli download iulia-elisa/XAMI-dataset dataset_archive.zip --repo-type dataset --local-dir '/path/to/local/dataset/dir'
-```
+``` -->
 
 ### Cloning the repository for more visualization tools
 
@@ -70,7 +73,7 @@ Clone the repository locally:
 
 ```bash
 # Github
-git clone https://github.com/IuliaElisa/XAMI-dataset.git
+git clone https://github.com/ESA-Datalabs/XAMI-dataset.git
 cd XAMI-dataset
 ```
 or 
