@@ -35,10 +35,11 @@ The dataset repository can be found on [HuggingFace](https://huggingface.co/data
 
 ```python
 import os
+import json
 import pandas as pd
 from huggingface_hub import hf_hub_download
 
-dataset_name = 'dataset_archive' # the dataset name of Huggingface
+dataset_name = 'xami_dataset' # the dataset name of Huggingface
 images_dir = '.' # the output directory of the dataset images
 
 hf_hub_download(
@@ -49,37 +50,29 @@ hf_hub_download(
 );
 
 # Unzip file
-!unzip "dataset_archive.zip" 
+!unzip -q "xami_dataset.zip" 
 
 # Read the train json annotations file
 annotations_path = os.path.join(images_dir, dataset_name, 'train/', '_annotations.coco.json')
 
 with open(annotations_path) as f:
     data_in = json.load(f)
+
+data_in['images'][0]
 ```
 or
-<!-- 
-```
+
 - using a CLI command:
 ```bash
 huggingface-cli download iulia-elisa/XAMI-dataset dataset_archive.zip --repo-type dataset --local-dir '/path/to/local/dataset/dir'
-``` -->
+```
 
 ### Cloning the repository for more visualization tools
-
-<!-- The dataset can be generated to match our baseline (this is helpful for recreating dataset and model results).  -->
-
 Clone the repository locally:
 
 ```bash
 # Github
 git clone https://github.com/ESA-Datalabs/XAMI-dataset.git
-cd XAMI-dataset
-```
-or 
-```bash
-# HuggingFace
-git clone https://huggingface.co/datasets/iulia-elisa/XAMI-dataset.git
 cd XAMI-dataset
 ```
 
