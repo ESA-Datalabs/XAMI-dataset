@@ -64,7 +64,8 @@ or
 
 - using a CLI command:
 ```bash
-huggingface-cli download iulia-elisa/XAMI-dataset dataset_archive.zip --repo-type dataset --local-dir '/path/to/local/dataset/dir'
+huggingface-cli download iulia-elisa/XAMI-dataset xami_dataset.zip --repo-type dataset --local-dir '/path/to/local/dataset/dir'
+
 ```
 
 ### Cloning the repository for more visualization tools
