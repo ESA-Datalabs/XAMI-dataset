@@ -25,3 +25,10 @@ xmm_om_artefacts_512-35-COCO/*
 xmm_om_artefacts_512-36-COCO/*
 plots/.ipynb_checkpoints/artefacts_examples-checkpoint.png
 xami_dataset/*
+xami_no_splits_dataset/*
+xami_utils/.ipynb_checkpoints/*
+notebooks/__pycache__/*
+notebooks/.ipynb_checkpoints/*
+mskf_files/.ipynb_checkpoints/*
+notebooks/dataset_sanity_check.ipynb
+.ipynb_checkpoints/__init__-checkpoint.py

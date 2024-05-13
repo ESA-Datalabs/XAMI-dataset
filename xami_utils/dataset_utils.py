@@ -1,4 +1,3 @@
-from tkinter import font
 import numpy as np
 import matplotlib.pyplot as plt
 import cv2
@@ -7,7 +6,6 @@ from typing import Dict, List, Any
 import pycocotools.mask as maskUtils
 import json
 from astropy.io import fits
-from pyparsing import col
 import pywt
 
 BOX_COLOR = (255, 0, 0) 
