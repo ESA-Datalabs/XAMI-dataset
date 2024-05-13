@@ -23,15 +23,12 @@ The images have been annotated using the following projects:
 - [Roboflow project](https://universe.roboflow.com/iuliaelisa/xmm_om_artefacts_512/), which allows for more interactive and visual annotation projects. 
 
 # The dataset format
-The dataset is splited into train and validation categories and contains annotated artefacts in COCO format for Instance Segmentation. We use multilabel Stratified K-fold technique (**k=4**) to balance class distributions across splits. We choose to work with a single dataset splits version (out of 4), but also provide means to work with all 4 versions. 
+The dataset is splited into train and validation categories and contains annotated artefacts in COCO format for Instance Segmentation. We use multilabel Stratified K-fold (**k=4**) to balance class distributions across splits. We choose to work with a single dataset splits version (out of 4) but also provide means to work with all 4 versions. 
 
-Please check [Dataset Structure](Datasets-Structure.md) for a more detailed structure of our dataset in COCO and YOLOv8-Seg format.
+Please check [Dataset Structure](Datasets-Structure.md) for a more detailed structure of our dataset in COCO-IS and YOLOv8-Seg format.
 
 # Downloading the dataset
-
-The dataset repository can be found on [HuggingFace](https://huggingface.co/datasets/iulia-elisa/XAMI-dataset) and [Github](https://github.com/IuliaElisa/XAMI-dataset).
-
-### Downloading the dataset archive from HuggingFace:
+### Downloading the dataset archive from HuggingFace
 
 ```python
 import os
