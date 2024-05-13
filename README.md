@@ -1,6 +1,5 @@
 # XAMI-dataset
 
-
 The **HuggingFace** repository for this dataset can be found **[here](https://huggingface.co/datasets/iulia-elisa/XAMI-dataset)**. 
 
 
@@ -28,7 +27,10 @@ The dataset is splited into train and validation categories and contains annotat
 Please check [Dataset Structure](Datasets-Structure.md) for a more detailed structure of our dataset in COCO-IS and YOLOv8-Seg format.
 
 # Downloading the dataset
-### Downloading the dataset archive from HuggingFace
+
+### *(Option 1)* Downloading the dataset **archive** from HuggingFace
+
+- using a python script:
 
 ```python
 import os
@@ -65,15 +67,14 @@ huggingface-cli download iulia-elisa/XAMI-dataset xami_dataset.zip --repo-type d
 
 ```
 
-### Cloning the repository for more visualization tools
-Clone the repository locally:
+### *(Option 2)* Cloning the repository for more visualization tools
 
 ```bash
 # Github
 git clone https://github.com/ESA-Datalabs/XAMI-dataset.git
 cd XAMI-dataset
 ```
-
+<!-- 
 # Dataset Split with SKF (Optional)
 
 - The below method allows for dataset splitting, using the pre-generated splits in CSV files. This step is useful when training multiple dataset splits versions to gain mor generalised view on metrics. 
@@ -86,7 +87,7 @@ csv_files = ['mskf_0.csv', 'mskf_1.csv', 'mskf_2.csv', 'mskf_3.csv']
 for idx, csv_file in enumerate(csv_files):
     mskf = pd.read_csv(csv_file)
     utils.create_directories_and_copy_files(images_dir, data_in, mskf, idx)
-```
+``` -->
 
 ## Licence 
 ...
