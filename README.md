@@ -90,4 +90,5 @@ for idx, csv_file in enumerate(csv_files):
 ``` -->
 
 ## Licence 
-...
+
+**[CC BY-NC 3.0 IGO](https://creativecommons.org/licenses/by-nc/3.0/igo/deed.en).**
