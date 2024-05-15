@@ -1,4 +1,4 @@
-# XAMI-dataset
+# XAMI (**X**MM-Newton Optical **A**rtefact **M**apping for Astronomical **I**nstance Segmentation)
 
 The **HuggingFace** repository for this dataset can be found **[here](https://huggingface.co/datasets/iulia-elisa/XAMI-dataset)**. 
 
@@ -90,5 +90,4 @@ for idx, csv_file in enumerate(csv_files):
 ``` -->
 
 ## Licence 
-
 **[CC BY-NC 3.0 IGO](https://creativecommons.org/licenses/by-nc/3.0/igo/deed.en).**
