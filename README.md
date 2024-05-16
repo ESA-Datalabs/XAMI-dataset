@@ -34,6 +34,7 @@ Please check [Dataset Structure](Datasets-Structure.md) for a more detailed stru
 # Github
 git clone https://github.com/ESA-Datalabs/XAMI-dataset.git
 cd XAMI-dataset
+conda env create -f requirements.yaml
 ```
 
 ### *(Option 2)* Downloading the dataset **archive** from HuggingFace
