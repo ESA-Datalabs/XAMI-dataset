@@ -297,7 +297,7 @@ def display_image_with_annotations(coco, cat_names, image_id):
 
     plt.show()
 
-def plot_segmentations(image_path, annotations, category_mapping):
+def plot_yolo_segmentations(image_path, annotations, category_mapping):
     image = Image.open(image_path)
     width, height = image.size
     draw = ImageDraw.Draw(image)
@@ -320,3 +320,43 @@ def plot_segmentations(image_path, annotations, category_mapping):
     plt.imshow(image)
     plt.axis('off')
     plt.show()
+    
+def plot_coco_segmentations(image_path, annotations, category_mapping):
+    image = Image.open(image_path)
+    width, height = image.size
+    draw = ImageDraw.Draw(image)
+
+    try:
+        font = ImageFont.truetype("DejaVuSans.ttf", 16)  # Load a font
+    except IOError:
+        font = ImageFont.load_default()
+
+    for class_id, points in annotations:
+        # Scale points from normalized coordinates to image dimensions
+        scaled_points = [(p[0] * width, p[1] * height) for p in zip(points[0::2], points[1::2])]
+        draw.polygon(scaled_points, outline='green', fill=None)  
+
+        category_name = category_mapping[class_id][0]
+        centroid_x = sum([p[0] for p in scaled_points]) / len(scaled_points)
+        centroid_y = sum([p[1] for p in scaled_points]) / len(scaled_points)
+        draw.text((centroid_x, centroid_y), category_name, fill='red', font=font, anchor='ms')
+
+    plt.imshow(image)
+    plt.axis('off')
+    plt.show()
+    
+def find_image_id(coco_data, filename):
+    for image in coco_data['images']:
+        if image['file_name'] == filename:
+            return image['id']
+    return None
+
+def extract_coco_annotations(coco_data, image_id):
+    annotations = []
+    for annotation in coco_data['annotations']:
+        if annotation['image_id'] == image_id:
+            annotations.append({
+                'category_id': annotation['category_id'],
+                'segmentation': annotation['segmentation']
+            })
+    return annotations

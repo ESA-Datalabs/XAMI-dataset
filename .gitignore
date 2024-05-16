@@ -34,3 +34,5 @@ notebooks/dataset_sanity_check.ipynb
 .ipynb_checkpoints/__init__-checkpoint.py
 xmm_om_artefacts_512-37-COCO/*
 xami_utils/__pycache__/utils.cpython-311.pyc
+.ipynb_checkpoints/*
+xami_utils/__pycache__/*
