@@ -28,7 +28,15 @@ Please check [Dataset Structure](Datasets-Structure.md) for a more detailed stru
 
 # Downloading the dataset
 
-### *(Option 1)* Downloading the dataset **archive** from HuggingFace
+### *(Option 1)* Cloning the repository for more visualization tools
+
+```bash
+# Github
+git clone https://github.com/ESA-Datalabs/XAMI-dataset.git
+cd XAMI-dataset
+```
+
+### *(Option 2)* Downloading the dataset **archive** from HuggingFace
 
 - using a python script:
 
@@ -65,14 +73,6 @@ or
 ```bash
 huggingface-cli download iulia-elisa/XAMI-dataset xami_dataset.zip --repo-type dataset --local-dir '/path/to/local/dataset/dir'
 
-```
-
-### *(Option 2)* Cloning the repository for more visualization tools
-
-```bash
-# Github
-git clone https://github.com/ESA-Datalabs/XAMI-dataset.git
-cd XAMI-dataset
 ```
 <!-- 
 # Dataset Split with SKF (Optional)
