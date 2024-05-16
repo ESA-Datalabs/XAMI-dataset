@@ -38,9 +38,9 @@ conda env create -f requirements.yaml # create an environmetn with the package r
 
 Then
 
-### Downloading the dataset archive from HuggingFace
+### Download the dataset archive from HuggingFace
 
-- using a python script:
+- using a python script (see [load_and_visualise_dataset.pynb]{https://github.com/ESA-Datalabs/XAMI-dataset/blob/main/load_and_visualise_dataset.ipynb})
 
 ```python
 import os
