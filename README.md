@@ -28,16 +28,17 @@ Please check [Dataset Structure](Datasets-Structure.md) for a more detailed stru
 
 # Downloading the dataset
 
-### *(Option 1)* Cloning the repository for more visualization tools
+### Clone the repository
 
 ```bash
-# Github
 git clone https://github.com/ESA-Datalabs/XAMI-dataset.git
 cd XAMI-dataset
-conda env create -f requirements.yaml
+conda env create -f requirements.yaml # create an environmetn with the package requirements
 ```
 
-### *(Option 2)* Downloading the dataset **archive** from HuggingFace
+Then
+
+### Downloading the dataset archive from HuggingFace
 
 - using a python script:
 
@@ -48,7 +49,7 @@ import pandas as pd
 from huggingface_hub import hf_hub_download
 
 dataset_name = 'xami_dataset' # the dataset name of Huggingface
-images_dir = '.' # the output directory of the dataset images
+work_dir = '.' # the output directory of the dataset
 
 hf_hub_download(
     repo_id="iulia-elisa/XAMI-dataset", # the Huggingface repo ID
@@ -61,7 +62,7 @@ hf_hub_download(
 !unzip -q "xami_dataset.zip" 
 
 # Read the train json annotations file
-annotations_path = os.path.join(images_dir, dataset_name, 'train/', '_annotations.coco.json')
+annotations_path = os.path.join(work_dir, dataset_name, 'train/', '_annotations.coco.json')
 
 with open(annotations_path) as f:
     data_in = json.load(f)
