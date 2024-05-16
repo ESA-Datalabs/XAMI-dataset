@@ -40,7 +40,7 @@ Then
 
 ### Download the dataset archive from HuggingFace
 
-- using a python script (see [load_and_visualise_dataset.pynb]{https://github.com/ESA-Datalabs/XAMI-dataset/blob/main/load_and_visualise_dataset.ipynb})
+- using a python script (see [load_and_visualise_dataset.pynb](https://github.com/ESA-Datalabs/XAMI-dataset/blob/main/load_and_visualise_dataset.ipynb))
 
 ```python
 import os
