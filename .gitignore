@@ -36,3 +36,6 @@ xmm_om_artefacts_512-37-COCO/*
 xami_utils/__pycache__/utils.cpython-311.pyc
 .ipynb_checkpoints/*
 xami_utils/__pycache__/*
+__pycache__/*
+test/xami_dataset/*
+dest_dir/xami_dataset/*
