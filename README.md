@@ -58,6 +58,7 @@ Or you can simply download only the dataset zip file from HuggingFace using a CL
 DEST_DIR='/path/to/local/dataset/dir'
 
 huggingface-cli download iulia-elisa/XAMI-dataset xami_dataset.zip --repo-type dataset --local-dir "$DEST_DIR" && unzip "$DEST_DIR/xami_dataset.zip" -d "$DEST_DIR" && rm "$DEST_DIR/xami_dataset.zip"
+```
 
 ## Licence 
 **[CC BY-NC 3.0 IGO](https://creativecommons.org/licenses/by-nc/3.0/igo/deed.en).**
