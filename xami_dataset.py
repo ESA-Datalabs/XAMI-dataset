@@ -83,7 +83,7 @@ class XAMIDataset:
 		}).set_table_styles([
 			{'selector': 'th', 'props': [('font-size', '12pt'), ('text-align', 'center')]},
 			{'selector': 'td', 'props': [('text-align', 'center'), ('padding', '5px'), ('width', '100px')]}
-		]).set_caption("Annotation Counts and Percentages by Filter and Split")
+		]).set_caption("Annotation Counts and Percentages by Category and Split")
 
 		return styled_df
 

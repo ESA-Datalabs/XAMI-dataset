@@ -51,28 +51,13 @@ xami_dataset = XAMIDataset(
     dataset_name="xami_dataset", 
     data_path='./dest_dir')
 ```
+###
+Or you can simply download only the dataset zip file from HuggingFace using a CLI command:
 
-- using a CLI command:
 ```bash
 DEST_DIR='/path/to/local/dataset/dir'
 
 huggingface-cli download iulia-elisa/XAMI-dataset xami_dataset.zip --repo-type dataset --local-dir "$DEST_DIR" && unzip "$DEST_DIR/xami_dataset.zip" -d "$DEST_DIR" && rm "$DEST_DIR/xami_dataset.zip"
-
-```
-<!-- 
-# Dataset Split with SKF (Optional)
-
-- The below method allows for dataset splitting, using the pre-generated splits in CSV files. This step is useful when training multiple dataset splits versions to gain mor generalised view on metrics. 
-```python
-import utils
-
-# run multilabel SKF split with the standard k=4
-csv_files = ['mskf_0.csv', 'mskf_1.csv', 'mskf_2.csv', 'mskf_3.csv'] 
-
-for idx, csv_file in enumerate(csv_files):
-    mskf = pd.read_csv(csv_file)
-    utils.create_directories_and_copy_files(images_dir, data_in, mskf, idx)
-``` -->
 
 ## Licence 
 **[CC BY-NC 3.0 IGO](https://creativecommons.org/licenses/by-nc/3.0/igo/deed.en).**
