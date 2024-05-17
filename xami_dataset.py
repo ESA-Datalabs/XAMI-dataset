@@ -149,7 +149,7 @@ class XAMIDataset:
 				cm = LinearSegmentedColormap.from_list('custom_blue', colors, N=256)
 				ax = axes[j, i]
 				im = ax.imshow(heatmap, cmap=cm, interpolation='nearest')
-				ax.set_title(f'{splits[j].capitalize()} - {cat_name}', fontsize=15)
+				ax.set_title(f'{splits[j].capitalize()} - {cat_name}', fontsize=13)
 				ax.set_xticks([])
 				ax.set_yticks([])
 				ax.grid(False)

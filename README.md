@@ -33,7 +33,7 @@ Please check [Dataset Structure](Datasets-Structure.md) for a more detailed stru
 ```bash
 git clone https://github.com/ESA-Datalabs/XAMI-dataset.git
 cd XAMI-dataset
-conda env create -f requirements.yaml # create an environmetn with the package requirements
+conda env create -f requirements.yaml # create an environment with the package requirements
 ```
 
 Then

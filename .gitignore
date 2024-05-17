@@ -23,7 +23,6 @@ dataset_archive/*
 xmm_om_artefacts_512-32-COCO/*
 xmm_om_artefacts_512-35-COCO/*
 xmm_om_artefacts_512-36-COCO/*
-plots/.ipynb_checkpoints/artefacts_examples-checkpoint.png
 xami_dataset/*
 xami_no_splits_dataset/*
 xami_utils/.ipynb_checkpoints/*
@@ -39,3 +38,5 @@ xami_utils/__pycache__/*
 __pycache__/*
 test/xami_dataset/*
 dest_dir/xami_dataset/*
+dataset_galactic_distribution.png
+plots/.ipynb_checkpoints/*
