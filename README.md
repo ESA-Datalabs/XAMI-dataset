@@ -43,37 +43,20 @@ Then
 - using a python script (see [load_and_visualise_dataset.pynb](https://github.com/ESA-Datalabs/XAMI-dataset/blob/main/load_and_visualise_dataset.ipynb))
 
 ```python
-import os
-import json
-import pandas as pd
-from huggingface_hub import hf_hub_download
+from xami_dataset import XAMIDataset
 
-dataset_name = 'xami_dataset' # the dataset name of Huggingface
-work_dir = '.' # the output directory of the dataset
-
-hf_hub_download(
-    repo_id="iulia-elisa/XAMI-dataset", # the Huggingface repo ID
-    repo_type='dataset', 
-    filename=dataset_name+'.zip', 
-    local_dir=images_dir
-);
-
-# Unzip file
-!unzip -q "xami_dataset.zip" 
-
-# Read the train json annotations file
-annotations_path = os.path.join(work_dir, dataset_name, 'train/', '_annotations.coco.json')
-
-with open(annotations_path) as f:
-    data_in = json.load(f)
-
-data_in['images'][0]
+# Download the dataset
+xami_dataset = XAMIDataset(
+    repo_id="iulia-elisa/XAMI-dataset", 
+    dataset_name="xami_dataset", 
+    data_path='./dest_dir')
 ```
-or
 
 - using a CLI command:
 ```bash
-huggingface-cli download iulia-elisa/XAMI-dataset xami_dataset.zip --repo-type dataset --local-dir '/path/to/local/dataset/dir'
+DEST_DIR='/path/to/local/dataset/dir'
+
+huggingface-cli download iulia-elisa/XAMI-dataset xami_dataset.zip --repo-type dataset --local-dir "$DEST_DIR" && unzip "$DEST_DIR/xami_dataset.zip" -d "$DEST_DIR" && rm "$DEST_DIR/xami_dataset.zip"
 
 ```
 <!-- 
