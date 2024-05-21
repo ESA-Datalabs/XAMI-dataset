@@ -1,10 +1,5 @@
 __pycache__/utils.cpython-311.pyc
-.ipynb_checkpoints/coco_format_to_parquet-checkpoint.ipynb
-.ipynb_checkpoints/dataset_sanity_check-checkpoint.ipynb
-.ipynb_checkpoints/load_and_visualise_dataset-checkpoint.ipynb
-.ipynb_checkpoints/mskf_0-checkpoint.csv
-.ipynb_checkpoints/stratified_kfold-checkpoint.ipynb
-.ipynb_checkpoints/utils-checkpoint.py
+.ipynb_checkpoints/*
 mskf_0/*
 mskf_1/*
 mskf_2/*
