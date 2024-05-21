@@ -43,7 +43,7 @@ coco_dataset/
 
 ```
 
-The annotations json file contains a dictionary of lists:
+Each annotations json file in splits contains a dictionary of lists:
 
 - images (a list of dictionaries)
   - id - image ID

@@ -54,7 +54,7 @@ xami_dataset = XAMIDataset(
 
 ```
 ###
-Or you can simply download only the dataset archive using a CLI command
+- Or you can simply download only the dataset archive using a CLI command
 
 ```bash
 DEST_DIR='/path/to/local/dataset/dir'
