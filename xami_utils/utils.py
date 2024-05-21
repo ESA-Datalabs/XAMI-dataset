@@ -278,9 +278,9 @@ def read_yolo_annotations(annotation_file):
     
     return annotations
 
-def display_image_with_annotations(coco, cat_names, image_id):
+def display_image_with_annotations(coco, cat_names, dir, image_id):
     img = coco.loadImgs(image_id)[0]
-    image_path = os.path.join('./mskf_0/train/', img['file_name'])
+    image_path = os.path.join(dir, img['file_name'])
     I = Image.open(image_path)
     plt.imshow(I); plt.axis('off')
     ann_ids = coco.getAnnIds(imgIds=img['id'], iscrowd=None)
