@@ -1,6 +1,6 @@
 # XAMI (**X**MM-Newton Optical **A**rtefact **M**apping for Astronomical **I**nstance Segmentation)
 
-The **HuggingFace** repository for this dataset can be found **[here](https://huggingface.co/datasets/iulia-elisa/XAMI-dataset)**. 
+The **HuggingFace🤗** repository for this dataset can be found **[here](https://huggingface.co/datasets/iulia-elisa/XAMI-dataset)**. 
 
 
 The XAMI dataset contains 1000 annotated images of observations from diverse sky regions of the XMM-Newton Optical Monitor (XMM-OM) image catalog. An additional 50 images with no annotations are included to help decrease the amount of False Positives or Negatives that may be caused by complex objects (e.g., large galaxies, clusters, nebulae).
@@ -33,12 +33,12 @@ Please check [Dataset Structure](Datasets-Structure.md) for a more detailed stru
 ```bash
 git clone https://github.com/ESA-Datalabs/XAMI-dataset.git
 cd XAMI-dataset
-conda env create -f requirements.yaml # create an environment with the package requirements
+conda env create -f environment.yaml # create an environment with the package requirements
 ```
 
 Then
 
-### Download the dataset archive from HuggingFace
+### Download the dataset archive from HuggingFace🤗
 
 - using a python script (see [load_and_visualise_dataset.pynb](https://github.com/ESA-Datalabs/XAMI-dataset/blob/main/load_and_visualise_dataset.ipynb))
 
@@ -50,9 +50,11 @@ xami_dataset = XAMIDataset(
     repo_id="iulia-elisa/XAMI-dataset", 
     dataset_name="xami_dataset", 
     data_path='./dest_dir')
+
+
 ```
 ###
-Or you can simply download only the dataset zip file from HuggingFace using a CLI command:
+Or you can simply download only the dataset archive using a CLI command
 
 ```bash
 DEST_DIR='/path/to/local/dataset/dir'
