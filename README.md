@@ -1,30 +1,8 @@
-# XAMI (**X**MM-Newton Optical **A**rtefact **M**apping for Astronomical **I**nstance Segmentation)
+# XAMI (XMM-Newton optical Artefact Mapping for astronomical Instance segmentation)
 
 The **HuggingFace🤗** repository for this dataset can be found **[here](https://huggingface.co/datasets/iulia-elisa/XAMI-dataset)**. 
 
-
 The XAMI dataset contains 1000 annotated images of observations from diverse sky regions of the XMM-Newton Optical Monitor (XMM-OM) image catalog. An additional 50 images with no annotations are included to help decrease the amount of False Positives or Negatives that may be caused by complex objects (e.g., large galaxies, clusters, nebulae).
-
-### Artefacts
-
-A particularity of our XAMI dataset compared to every-day images datasets are the locations where artefacts usually appear. 
-<img src="https://github.com/ESA-Datalabs/XAMI-dataset/blob/main/plots/artefact_distributions.png" alt="Examples of an image with multiple artefacts." />
-
-Here are some examples of common artefacts in the dataset:
-
-<img src="https://github.com/ESA-Datalabs/XAMI-dataset/blob/main/plots/artefacts_examples.png" alt="Examples of common artefacts in the OM observations." width="400"/>
-
-# Annotation platforms
-
-The images have been annotated using the following projects:
-
-- [Zooniverse project](https://www.zooniverse.org/projects/ori-j/ai-for-artefacts-in-sky-images), where the resulted annotations are not externally visible. 
-- [Roboflow project](https://universe.roboflow.com/iuliaelisa/xmm_om_artefacts_512/), which allows for more interactive and visual annotation projects. 
-
-# The dataset format
-The dataset is splited into train and validation categories and contains annotated artefacts in COCO format for Instance Segmentation. We use multilabel Stratified K-fold (**k=4**) to balance class distributions across splits. We choose to work with a single dataset splits version (out of 4) but also provide means to work with all 4 versions. 
-
-Please check [Dataset Structure](Datasets-Structure.md) for a more detailed structure of our dataset in COCO-IS and YOLOv8-Seg format.
 
 # Downloading the dataset
 
@@ -49,12 +27,10 @@ from xami_dataset import XAMIDataset
 xami_dataset = XAMIDataset(
     repo_id="iulia-elisa/XAMI-dataset", 
     dataset_name="xami_dataset", 
-    data_path='./dest_dir')
-
-
+    dest_dir='./dest_dir')
 ```
-###
-- Or you can simply download only the dataset archive using a CLI command
+
+- Or you can simply download only the dataset and unarchive it using a CLI command
 
 ```bash
 DEST_DIR='/path/to/local/dataset/dir'
@@ -62,5 +38,28 @@ DEST_DIR='/path/to/local/dataset/dir'
 huggingface-cli download iulia-elisa/XAMI-dataset xami_dataset.zip --repo-type dataset --local-dir "$DEST_DIR" && unzip "$DEST_DIR/xami_dataset.zip" -d "$DEST_DIR" && rm "$DEST_DIR/xami_dataset.zip"
 ```
 
-## Licence 
+# About 
+
+### Artefacts
+
+A particularity of our XAMI dataset compared to every-day images datasets are the locations where artefacts usually appear. 
+<img src="https://github.com/ESA-Datalabs/XAMI-dataset/blob/main/plots/artefact_distributions.png" alt="Examples of an image with multiple artefacts." />
+
+Here are some examples of common artefacts in the dataset:
+
+<img src="https://github.com/ESA-Datalabs/XAMI-dataset/blob/main/plots/artefacts_examples.png" alt="Examples of common artefacts in the OM observations." width="400"/>
+
+### Annotation platforms
+
+The images have been annotated using the following projects:
+
+- [Zooniverse project](https://www.zooniverse.org/projects/ori-j/ai-for-artefacts-in-sky-images), where the resulted annotations are not externally visible. 
+- [Roboflow project](https://universe.roboflow.com/iuliaelisa/xmm_om_artefacts_512/), which allows for more interactive and visual annotation projects. 
+
+### The dataset format
+The dataset is splited into train and validation categories and contains annotated artefacts in COCO format for Instance Segmentation. We use multilabel Stratified K-fold (**k=4**) to balance class distributions across splits. We choose to work with a single dataset splits version (out of 4) but also provide means to work with all 4 versions. 
+
+Please check [Dataset Structure](Datasets-Structure.md) for a more detailed structure of our dataset in COCO-IS and YOLOv8-Seg format.
+
+# Licence 
 **[CC BY-NC 3.0 IGO](https://creativecommons.org/licenses/by-nc/3.0/igo/deed.en).**
