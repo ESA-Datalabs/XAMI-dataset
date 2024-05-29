@@ -215,3 +215,27 @@ class XAMIDataset:
 		if output_path:
 			plt.savefig(output_path, dpi=200)  
 		plt.close()
+  
+	def exposure_per_filter(self, filters_dict, obs_coords_file, splits=['train', 'valid']):
+		with open(obs_coords_file, 'r') as file:
+			coords_data = json.load(file)
+
+		exposure_per_filter = {filter: 0 for filter in filters_dict.keys()}
+		exposure_per_filter = {'train': exposure_per_filter.copy(), 'valid': exposure_per_filter.copy()}
+    
+		for split in splits:
+			split_filter_count = {filter: 0.0 for filter in filters_dict.keys()}
+   
+			for image_file in os.listdir(os.path.join(self.dest_dir, self.dataset_name, split)):
+				obs = image_file.split('.')[0].replace('_png', '.fits')
+				if obs in coords_data:
+					filter = obs[:13][-1]
+					exposure_per_filter[split][filter] += coords_data[obs]['EXPOSURE']
+					split_filter_count[filter] += 1
+
+			# mean exposure per filter
+			for filter in exposure_per_filter[split].keys():
+				if split_filter_count[filter] > 0:
+					exposure_per_filter[split][filter] /= split_filter_count[filter]
+    
+		return exposure_per_filter
