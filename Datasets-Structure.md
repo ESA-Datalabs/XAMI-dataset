@@ -1,8 +1,8 @@
 # Datasets-Structure
 
-**(YOLOv8 format)**
+**(YOLOv8 Instance Segmentation format)**
 
-The Yolov8 dataset for segmentation is usually structured as follows:
+The Yolov8 dataset for segmentation is structured as follows:
 ```
 yolo_dataset/
 │
@@ -10,27 +10,29 @@ yolo_dataset/
 │ ├── images/
 │ │ ├── 🖼️ <train_img_1>.<ImageFormat> 
 | | ├── 🖼️ <train_img_2>.<ImageFormat> 
-| |  ...
+| | ...
 │ └── labels/
 │   ├── 📄 <train_img_1_labels>.txt 
 │   ├── 🖼️ <train_img_2_labels>.txt
 |   ...
+|
 ├── valid/
 │ ├── images/
 │ │ ├── 🖼️ <valid_img_1>.<ImageFormat> 
 | | ├── 🖼️ <valid_img_2>.<ImageFormat> 
-| |  ...
+| | ...
 │ └── labels/
 │   ├── 📄 <valid_img_1_labels>.txt
 │   ├── 🖼️ <valid_img_2_labels>.txt
-│
+│   ...
+│   
 └── 📄 data.yaml
 ```
 
-Each ```xyz_img_xyz_labels.txt``` file contains multiple annotations (one per line) with corresponding class ID and segmentation coordinates for the corresponding image:
+Each ```xyz_img_xyz_labels.txt``` file contains multiple annotations (one per line) with corresponding class ID and segmentation coordinates for a single image:
 
-`<class-index1> <x11> <y11> <x12> <y12> ... <x1n> <y1n>`
-`...`
+`<class-id1> <x11> <y11> <x12> <y12> ... <x1n> <y1n>
+...`
 
 The file `data.yaml` contains keys such as:
  - `names` (the class names)
