@@ -1,0 +1,9 @@
+include README.md
+include LICENSE
+recursive-include . *.yaml
+recursive-include . *.yml
+recursive-include . *.json
+recursive-include . *.png
+recursive-include . *.jpg
+recursive-include . *.pdf
+recursive-include xami_dataset *

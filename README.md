@@ -1,6 +1,6 @@
 <div align="center">
 <h1> XAMI: XMM-Newton optical Artefact Mapping for astronomical Instance segmentation </h1>
-<h2> <i> The Dataset </i> </h12>
+<i> The Dataset </i>
 </div>
 
 ## 💫 Introduction
