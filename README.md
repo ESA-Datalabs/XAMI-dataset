@@ -16,7 +16,12 @@ The XAMI dataset contains 1000 annotated images of observations from diverse sky
 ```bash
 git clone https://github.com/ESA-Datalabs/XAMI-dataset.git
 cd XAMI-dataset
-conda env create -f environment.yaml # create an environment with the package requirements
+
+# create an environment with the package requirements
+conda env create -f environment.yaml 
+
+# Install the package in editable mode
+pip install -e .
 ```
 
 Then
