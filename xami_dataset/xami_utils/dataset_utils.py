@@ -96,47 +96,7 @@ def plot_bboxes_and_masks(image, bboxes, masks):
         plt.axis('off')
         plt.show()
         plt.close()
-
-def draw_label(img, text, pos, bg_color, alpha=0.8):
-
-    if 'read-out-streak' in text:
-        text = 'ROS'
-    if 'smoke' in text:
-        text = 'SR'
-    if 'central' in text:
-        text = 'CR'
-
-    if 'loop' in text:
-        text = 'SG'
-    if 'scattered' in text:
-        text = 'scattered'
         
-    font_face = cv2.FONT_HERSHEY_SIMPLEX
-    scale = 1
-    color = (0, 0, 0)  # Black text
-    thickness = cv2.FILLED
-    margin = 0
-
-    txt_size = cv2.getTextSize(text, font_face, scale, 1)
-    txt_width, txt_height = txt_size[0][0], txt_size[0][1]
-
-    # Position of the rectangle
-    rect_start = (pos[0], pos[1] - txt_height - margin * 2)
-    rect_end = (pos[0] + txt_width + margin * 2, pos[1])
-
-    # Create a transparent overlay for the rectangle
-    overlay = img.copy()
-
-    if not (text.endswith('star') or text.endswith('star')):
-        cv2.rectangle(overlay, rect_start, rect_end, bg_color, thickness)
-
-        # Blend the overlay with the original image
-        cv2.addWeighted(overlay, alpha, img, 1 - alpha, 0, img)
-
-        # Draw the text on the original image
-        text_pos = (pos[0] + margin * 2, pos[1] - margin)
-        cv2.putText(img, text, text_pos, font_face, scale, color, 1, cv2.LINE_AA)
-
 def visualize_masks(image_path, image, masks, labels, colors, alpha=0.4, is_gt=True):
     """
     Visualize masks on an image with contours and dynamically sized text labels with a background box.
@@ -547,7 +507,7 @@ def generate_galactic_distribution_plot(dest_dir, dataset_name, obs_coords_file,
 
     for split in splits: 
         for image_file in os.listdir(os.path.join(dest_dir, dataset_name, split)):
-            obs = image_file.split('.')[0].replace('_png', '.fits')
+            obs = image_file[:13]+'.fits'
             if obs in coords_data:
                 ra.append(coords_data[obs]['RA'])
                 dec.append(coords_data[obs]['DEC'])
@@ -597,10 +557,11 @@ def exposure_per_filter(dest_dir, dataset_name, filters_dict, obs_coords_file, s
         split_filter_count = {filter: 0.0 for filter in filters_dict.keys()}
 
         for image_file in os.listdir(os.path.join(dest_dir, dataset_name, split)):
-            obs = image_file.split('.')[0].replace('_png', '.fits')
-            if obs in coords_data:
-                filter = obs[:13][-1]
-                exposure_per_filter[split][filter] += coords_data[obs]['EXPOSURE']
+            obs = image_file[:13]
+            obs_name_in_json = obs+'.fits'
+            if obs_name_in_json in coords_data:
+                filter = obs[-1]
+                exposure_per_filter[split][filter] += coords_data[obs_name_in_json]['EXPOSURE']
                 split_filter_count[filter] += 1
 
         # mean exposure per filter
