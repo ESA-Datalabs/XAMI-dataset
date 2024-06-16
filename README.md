@@ -57,11 +57,11 @@ Please check [Dataset Structure](Datasets-Structure.md) for a more detailed stru
 ### Artefacts
 
 A particularity of our XAMI dataset compared to every-day images datasets are the locations where artefacts usually appear. 
-<img src="https://github.com/ESA-Datalabs/XAMI-dataset/blob/main/plots/artefact_distributions.png" alt="Examples of an image with multiple artefacts." />
+<img src="https://github.com/ESA-Datalabs/XAMI-dataset/blob/main/xami_dataset/artefact_distributions.png" alt="Examples of an image with multiple artefacts." />
 
 Here are some examples of common artefacts in the dataset:
 
-<img src="https://github.com/ESA-Datalabs/XAMI-dataset/blob/main/plots/artefacts_examples.png" alt="Examples of common artefacts in the OM observations." width="400"/>
+<img src="https://github.com/ESA-Datalabs/XAMI-dataset/blob/main/xami_dataset/artefacts_examples.png" alt="Examples of common artefacts in the OM observations." width="400"/>
 
 ### Annotation platforms
 
