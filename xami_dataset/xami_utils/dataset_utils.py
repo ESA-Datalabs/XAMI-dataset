@@ -455,7 +455,7 @@ def generate_heatmap(train_annotations_path, valid_annotations_path, output_path
     valid_data = get_data_from_json(valid_annotations_path)
 
     _, cat_names, _ = get_categories(train_data)
-    categories = [cat_names[-1], cat_names[3], cat_names[2], cat_names[0], cat_names[1]]
+    categories = [cat_names[-1], cat_names[4], cat_names[3], cat_names[2], cat_names[1]]
     img_width, img_height = 512, 512
 
     style.use('ggplot')
