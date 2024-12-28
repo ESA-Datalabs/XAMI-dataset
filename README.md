@@ -1,5 +1,10 @@
 <div align="center">
-<h1> XAMI: XMM-Newton optical Artefact Mapping for astronomical Instance segmentation </h1>
+<h1> XAMI: XMM-Newton optical Artefact Mapping for astronomical Instance segmentation 
+<p align="center">
+  <a href="https://arxiv.org/abs/2406.17323">
+    <img src="https://img.shields.io/badge/arXiv-2406.17323-b31b1b.svg" alt="arXiv">
+  </a>
+</p> </h1>
 <i> The Dataset </i>
 </div>
 
