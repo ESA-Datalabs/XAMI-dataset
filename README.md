@@ -79,4 +79,12 @@ The images have been annotated using the following projects:
 - [Roboflow project](https://universe.roboflow.com/iuliaelisa/xmm_om_artefacts_512/), which allows for more interactive and visual annotation projects. 
 
 # © Licence 
-**[CC BY-NC 3.0 IGO](https://creativecommons.org/licenses/by-nc/3.0/igo/deed.en).**
+
+<p align="left">
+      <a href="https://creativecommons.org/licenses/by-nc/3.0/igo/deed.en">
+    <img src="https://licensebuttons.net/l/by-nc/3.0/88x31.png" alt="CC BY-NC 3.0 IGO" />
+  </a>
+  </a>
+</p>
+
+**[CC BY-NC 3.0 IGO](https://creativecommons.org/licenses/by-nc/3.0/igo/deed.en)**
